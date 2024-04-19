@@ -41,13 +41,19 @@
                             selected="{{ Route::currentRouteName() == 'courses.index' }}" />
 
                         <!-- Menu Item: Curricula -->
-                        <x-menus.submenu-full-width content="Curricula" selectable="1" selected="0"
-                            uniqueName="submenu_curricula">
-                            @foreach ($courses as $course)
-                                <x-menus.submenu-item content="{{ $course->name }}" selectable="1" selected="0"
-                                    href="#" />
-                            @endforeach
-                        </x-menus.submenu-full-width>
+<x-menus.submenu-full-width
+content="Curricula"
+selectable="1"
+selected="0"
+uniqueName="submenu_curricula">
+@foreach ($courses as $course)
+<x-menus.submenu-item
+content="{!! $course->fullName !!}"
+selectable="1"
+selected="0"
+href="#"/>
+@endforeach
+</x-menus.submenu-full-width>
 
                         <!-- Menu Item: Disciplines -->
                         <x-menus.menu-item content="Disciplines" href="{{ route('disciplines.index') }}"
