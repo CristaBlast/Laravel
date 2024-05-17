@@ -1,20 +1,24 @@
 <?php
 
-namespace App\View\Components\table;
+namespace App\View\Components\menus;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class IconEdit extends Component
+class SubmenuFullWidth extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $href = '#',
-    ) {
-        //
+        public string $uniqueName,
+        public string $content = 'Submenu',
+        public bool $selectable = true,
+        public bool $selected = false,
+    )
+    {
+
     }
 
     /**
@@ -22,6 +26,6 @@ class IconEdit extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.table.icon-edit');
+        return view('components.menus.submenu-full-width');
     }
 }

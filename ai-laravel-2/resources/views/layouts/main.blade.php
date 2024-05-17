@@ -25,80 +25,122 @@
                 <div class="relative flex flex-col sm:flex-row px-6 sm:px-0 grow justify-between">
                     <!-- Logo -->
                     <div class="shrink-0 -ms-4">
-                        <a href="{{ route('home') }}">
-                            <div
-                                class="h-16 w-40 bg-cover bg-[url('../img/politecnico_h.svg')] dark:bg-[url('../img/politecnico_h_white.svg')]">
-                            </div>
+                        <a href="{{ route('home')}}">
+                            <div class="h-16 w-40 bg-cover bg-[url('../img/politecnico_h.svg')] dark:bg-[url('../img/politecnico_h_white.svg')]"></div>
                         </a>
                     </div>
 
                     <!-- Menu Items -->
-                    <div id="menu-container"
-                        class="grow flex flex-col sm:flex-row items-stretch
+                    <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
                     invisible h-0 sm:visible sm:h-auto">
                         <!-- Menu Item: Courses -->
-                        <x-menus.menu-item content="Courses" href="{{ route('courses.index') }}"
-                            selected="{{ Route::currentRouteName() == 'courses.index' }}" />
+                        <x-menus.menu-item
+                            content="Courses"
+                            href="{{ route('courses.index') }}"
+                            selected="{{ Route::currentRouteName() == 'courses.index'}}"
+                        />
 
                         <!-- Menu Item: Curricula -->
-<x-menus.submenu-full-width
-content="Curricula"
-selectable="1"
-selected="0"
-uniqueName="submenu_curricula">
-@foreach ($courses as $course)
-<x-menus.submenu-item
-content="{!! $course->fullName !!}"
-selectable="1"
-selected="0"
-href="#"/>
-@endforeach
-</x-menus.submenu-full-width>
+                        <x-menus.submenu-full-width
+                            content="Curricula"
+                            selectable="1"
+                            selected="0"
+                            uniqueName="submenu_curricula">
+                            @foreach ($courses as $course)
+                                <x-menus.submenu-item
+                                :content="$course->fullName"
+                                selectable="1"
+                                selected="0"
+                                href="#"/>
+                            @endforeach
+                        </x-menus.submenu-full-width>
 
                         <!-- Menu Item: Disciplines -->
-                        <x-menus.menu-item content="Disciplines" href="{{ route('disciplines.index') }}"
-                            selected="{{ Route::currentRouteName() == 'disciplines.index' }}" />
+                        <x-menus.menu-item
+                            content="Disciplines"
+                            href="{{ route('disciplines.index') }}"
+                            selected="{{ Route::currentRouteName() == 'disciplines.index'}}"
+                            />
 
                         <!-- Menu Item: Teachers -->
-                        <x-menus.menu-item content="Teachers" href="#" selected="0" />
+                        <x-menus.menu-item
+                            content="Teachers"
+                            href="#"
+                            selected="0"
+                            />
 
                         <!-- Menu Item: Others -->
-                        <x-menus.submenu selectable="0" uniqueName="submenu_others" content="More">
-                            <x-menus.submenu-item content="Students" selectable="0" href="#" />
-                            <x-menus.submenu-item content="Administratives" selectable="0" href="#" />
-                            <hr>
-                            <x-menus.submenu-item content="Departments" selectable="0" href="#" />
-                            <x-menus.submenu-item content="Course Management" selectable="0" href="#" />
+                        <x-menus.submenu
+                            selectable="0"
+                            uniqueName="submenu_others"
+                            content="More">
+                                <x-menus.submenu-item
+                                    content="Students"
+                                    selectable="0"
+                                    href="#"/>
+                                <x-menus.submenu-item
+                                    content="Administratives"
+                                    selectable="0"
+                                    href="#"/>
+                                <hr>
+                                <x-menus.submenu-item
+                                    content="Departments"
+                                    selectable="0"
+                                    href="#"/>
+                                <x-menus.submenu-item
+                                    content="Course Management"
+                                    selectable="0"
+                                    href="#"/>
                         </x-menus.submenu>
 
                         <div class="grow"></div>
 
                         <!-- Menu Item: Cart -->
-                        <x-menus.cart href="#" selectable="0" selected="1" total="2" />
+                        <x-menus.cart
+                            href="#"
+                            selectable="0"
+                            selected="1"
+                            total="2"/>
 
-                        <x-menus.submenu selectable="0" uniqueName="submenu_user">
+                        <x-menus.submenu
+                            selectable="0"
+                            uniqueName="submenu_user"
+                            >
                             <x-slot:content>
                                 <div class="pe-1">
-                                    <img src="{{ Vite::asset('resources/img/photos/photo_example.jpeg') }}"
-                                        class="w-11 h-11 min-w-11 min-h-11 rounded-full">
+                                    <img src="{{ Vite::asset('resources/img/photos/photo_example.jpeg') }}" class="w-11 h-11 min-w-11 min-h-11 rounded-full">
                                 </div>
-                                {{-- ATENÇÃO:
- ALTERAR FORMULA DE CALCULO DAS LARGURAS MÁXIMAS QUANDO O MENU FOR ALTERADO --}}
-                                <div
-                                    class="ps-1 sm:max-w-[calc(100vw-39rem)]
- md:max-w-[calc(100vw-41rem)]
- lg:max-w-[calc(100vw-46rem)]
- xl:max-w-[34rem]
- truncate">
+                                {{-- ATENÇÃO - ALTERAR FORMULA DE CALCULO DAS LARGURAS MÁXIMAS QUANDO O MENU FOR ALTERADO --}}
+                                <div class="ps-1 sm:max-w-[calc(100vw-39rem)] md:max-w-[calc(100vw-41rem)] lg:max-w-[calc(100vw-46rem)] xl:max-w-[34rem] truncate">
+                                    João Miguel da Silva Pereira Antunes
+                                </div>
                             </x-slot>
-                            <x-menus.submenu-item content="My Disciplines" selectable="0" href="#" />
-                            <x-menus.submenu-item content="My Teachers" selectable="0" href="#" />
-                            <x-menus.submenu-item content="My Students" selectable="0" href="#" />
+                            <x-menus.submenu-item
+                                content="My Disciplines"
+                                selectable="0"
+                                href="#"/>
+                            <x-menus.submenu-item
+                                content="My Teachers"
+                                selectable="0"
+                                href="#"/>
+                            <x-menus.submenu-item
+                                content="My Students"
+                                selectable="0"
+                                href="#"/>
                             <hr>
-                            <x-menus.submenu-item content="Profile" selectable="0" href="#" />
-                            <x-menus.submenu-item content="Change Password" selectable="0" href="#" />
+                            <x-menus.submenu-item
+                                content="Profile"
+                                selectable="0"
+                                href="#"/>
+                            <x-menus.submenu-item
+                                content="Change Password"
+                                selectable="0"
+                                href="#"/>
                             <hr>
-                            <x-menus.submenu-item content="Log Out" selectable="0" href="#" />
+                            <x-menus.submenu-item
+                                content="Log Out"
+                                selectable="0"
+                                href="#"/>
                         </x-menus.submenu>
                     </div>
                     <!-- Hamburger -->
@@ -106,9 +148,9 @@ href="#"/>
                         <button id="hamburger_btn">
                             <svg class="h-8 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path id="hamburger_btn_open" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                                 <path class="invisible" id="hamburger_btn_close" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                     </div>

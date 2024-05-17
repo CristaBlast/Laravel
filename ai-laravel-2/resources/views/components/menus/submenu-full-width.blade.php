@@ -1,13 +1,13 @@
-<div class="relative sm:static group flex flex-col me-0 sm:me-1 lg:me-2">
+<div {{ $attributes->merge(['class' => 'relative sm:static group flex flex-col me-0 sm:me-1 lg:me-2']) }}>
     @if($selectable)
         @if($selected)
             <button data-submenu="{{$uniqueName}}"
-            {{ $attributes->merge(['class' => 'grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
-                text-sm font-medium text-gray-500 dark:text-gray-400
-                border-b-2 border-indigo-400 dark:border-indigo-500
-              hover:text-gray-700 dark:hover:text-gray-300
-                focus:outline-none focus:border-indigo-700 dark:focus:border-indigo-300 focus:text-gray-700 dark:focus:text-gray-300
-                hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900']) }}>
+                    class="grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
+                    text-sm font-medium text-gray-500 dark:text-gray-400
+                    border-b-2 border-indigo-400 dark:border-indigo-500
+                    hover:text-gray-700 dark:hover:text-gray-300
+                    focus:outline-none focus:border-indigo-700 dark:focus:border-indigo-300 focus:text-gray-700 dark:focus:text-gray-300
+                    hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900">
                 {{$content}}
                 <div>
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +20,12 @@
             </button>
         @else
             <button data-submenu="{{$uniqueName}}"
-            {{ $attributes->merge(['class' => 'grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
+                class="grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
                 text-sm font-medium text-gray-500 dark:text-gray-400
                 border-b-2 border-transparent
                 hover:border-gray-300 dark:hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300
                 focus:outline-none focus:border-gray-300 dark:focus:border-gray-700 focus:text-gray-700 dark:focus:text-gray-300
-                hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900']) }}>
+                hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900">
                 {{$content}}
                 <div>
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -39,12 +39,12 @@
         @endif
     @else
         <button data-submenu="{{$uniqueName}}"
-            {{ $attributes->merge(['class' => 'grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
+            class="grow inline-flex items-center h-16  px-3 sm:px-0.5 md:px-1 lg:px-2 pt-1
             text-sm font-medium text-gray-500 dark:text-gray-400
             border-b-2 border-transparent
             hover:text-gray-700 dark:hover:text-gray-300
             focus:outline-none focus:text-gray-700 dark:focus:text-gray-300
-            hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900']) }}>
+            hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-white dark:sm:hover:bg-gray-900">
             {{$content}}
             <div>
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@
     @endif
 
     <div id="{{$uniqueName}}" class="z-40 w-full items-center
-                grid grid-cols-{{$cols}} sm:grid-cols-{{$cols_sm}} md:grid-cols-{{$cols_md}} lg:grid-cols-{{$cols_lg}}
+                grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
                 gap-3 bg-white dark:bg-gray-900
                 sm:absolute sm:left-0 sm:top-14 sm:origin-top-left
                 sm:rounded-md sm:ring-1 sm:ring-black sm:ring-opacity-5 sm:shadow-lg

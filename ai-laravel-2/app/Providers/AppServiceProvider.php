@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // View::share adds data (variables) that are shared through all views (like global data)
         View::share('courses', Course::all());
-        //
     }
 }

@@ -20,19 +20,23 @@ class Course extends Model
         'contact',
         'objectives',
         'objectives_pt',
-        ];
+    ];
 
-        public $timestamps = false;
+    public $timestamps = false;
 
-        protected $primaryKey = 'abbreviation';
-        public $incrementing = false;
-        protected $keyType = 'string';
- public function getFullNameAttribute()
- {
- return match ($this->type) {
- 'Master' => "Master's in ",
- 'TESP' => 'TeSP - ',
- default => ''
- } . $this->name;
- }
+    protected $primaryKey = 'abbreviation';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    public function getFullNameAttribute()
+    {
+        return match ($this->type) {
+            'Master'    => "Master's in ",
+            'TESP'      => 'TeSP - ',
+            default     => ''
+        }
+            . $this->name;
+    }
 }

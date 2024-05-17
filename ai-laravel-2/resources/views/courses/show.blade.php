@@ -1,13 +1,9 @@
+@extends('layouts.main')
 
-@extends('layout')
-@section('header-title', 'Update course "' . $course->name . '"')
+@section('header-title', 'Course "' . $course->name . '"')
+
 @section('main')
- <form method="POST" action="{{ route('courses.update', ['course' => $course]) }}">
- @csrf
- @method('PUT')
- @include('courses.shared.fields',['readonlyData' => true])
- <div>
- <button type="submit" name="ok">Save course</button>
- </div>
- </form>
+    <div>
+        @include('courses.shared.fields', ['readonlyData' => true])
+    </div>
 @endsection

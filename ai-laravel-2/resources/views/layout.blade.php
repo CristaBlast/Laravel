@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +38,8 @@
             margin-bottom: 10px;
         }
     </style>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body>
     <nav class="bg-indigo-400">
         <ul>
@@ -55,7 +54,6 @@
     <div class="main">
         <header>
             <h1>@yield('header-title')</h1>
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
         </header>
         <div class="content">
             @yield('main')
